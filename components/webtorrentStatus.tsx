@@ -16,7 +16,6 @@ interface Props {
 }
 
 interface State {
-    shareUrl: string;
     copyStatus: string;
     isSSR: boolean;
 }
@@ -25,17 +24,13 @@ export default class WebTorrentStatus extends React.Component<Props, State> {
     constructor(props) {
         super(props);
         this.state = {
-            shareUrl: null,
             copyStatus: "Copy Link",
-            isSSR: true
+            isSSR: true,
         };
     }
     componentDidMount() {
         this.setState({
-            shareUrl: `${window.location.origin.toString()}/seed/${
-                this.props.torrent?.infoHash
-            }`,
-            isSSR: false
+            isSSR: false,
         });
     }
     render() {
@@ -50,37 +45,41 @@ export default class WebTorrentStatus extends React.Component<Props, State> {
                                 <p className="subtitle">
                                     Hash: {props.torrent?.infoHash}
                                 </p>
-                                <Clipboard
-                                    data-tip
-                                    data-for="copyurl"
-                                    component="button"
-                                    className="button is-primary"
-                                    data-clipboard-text={this.state.shareUrl}
-                                    onClick={() => {
-                                        this.setState({
-                                            copyStatus: "Link Copied!",
-                                        });
-                                        setTimeout(() => {
-                                            this.setState({
-                                                copyStatus: "Copy Link",
-                                            });
-                                        }, 2000);
-                                    }}
-                                >
-                                    Copy Link
-                                </Clipboard>
-                                {
-                                    this.state.isSSR?null:
-                                    <ReactTooltip
-                                    
-                                    id="copyurl"
-                                    backgroundColor="#AE58EB"
-                                    effect="solid"
-                                    place="right"
-                                    >
-                                        <span suppressHydrationWarning>{this.state.copyStatus}</span>
-                                    </ReactTooltip>
-                                }
+                                {this.state.isSSR ? null : (
+                                    <>
+                                        <Clipboard
+                                            data-tip
+                                            data-for="copyurl"
+                                            component="button"
+                                            className="button is-primary"
+                                            data-clipboard-text={
+                                                `${window.location.origin.toString()}/seed/${
+                                                    this.props.torrent?.infoHash
+                                                }`
+                                            }
+                                            onClick={() => {
+                                                this.setState({
+                                                    copyStatus: "Link Copied!",
+                                                });
+                                                setTimeout(() => {
+                                                    this.setState({
+                                                        copyStatus: "Copy Link",
+                                                    });
+                                                }, 2000);
+                                            }}
+                                        >
+                                            Copy Link
+                                        </Clipboard>
+                                        <ReactTooltip
+                                            id="copyurl"
+                                            backgroundColor="#AE58EB"
+                                            effect="solid"
+                                            place="right"
+                                        >
+                                            <span>{this.state.copyStatus}</span>
+                                        </ReactTooltip>
+                                    </>
+                                )}
                             </div>
                             <div className="column">
                                 <p className="subtitle">
