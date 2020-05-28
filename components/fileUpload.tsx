@@ -1,19 +1,13 @@
 import React from "react"
-import FileTags from "./tags";
+import Tags from "./tags";
 import {observer} from "mobx-react"
 import { FileStoreContext } from "../pages/_app";
 
-interface State {
-    files: Array<File>
-}
-
-class FileUpload extends React.Component<{}, State, {}> {
+@observer
+class FileUpload extends React.Component<{}, {}, {}> {
     fileInput: React.RefObject<HTMLInputElement>;
     constructor(props) {
         super(props)
-        this.state = {
-            files: []
-        }
         this.fileInput = React.createRef<HTMLInputElement>()
     }
     render() {
@@ -28,6 +22,7 @@ class FileUpload extends React.Component<{}, State, {}> {
                         <input ref={this.fileInput} className="file-input" type="file" name="resume" multiple onChange={(e) => {
                             e.preventDefault()
                             fs.setFilesFromList(this.fileInput.current.files)
+                            this.fileInput.current.value = ""
                         }}/>
                     }
                     </FileStoreContext.Consumer>
@@ -36,13 +31,13 @@ class FileUpload extends React.Component<{}, State, {}> {
                             <i className="fas fa-upload"></i>
                         </span>
                         <span className="file-label">
-                            Upload Files Here
+                            Upload Files
                         </span>
                     </span>
                     </label>
                 </div>
             </div>
-            <FileTags></FileTags>
+            <Tags></Tags>
             </>
         )
     }

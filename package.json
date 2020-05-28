@@ -19,18 +19,24 @@
   },
   "homepage": "https://github.com/ninjawarrior1337/mari#readme",
   "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-proposal-decorators": "^7.1.0",
     "@fortawesome/fontawesome-free": "^5.13.0",
     "@types/react": "^16.9.35",
     "@types/react-dom": "^16.9.8",
     "@types/webtorrent": "^0.107.2",
     "bulma": "^0.8.2",
     "critters-webpack-plugin": "^2.5.0",
+    "end-of-stream": "1.4.1",
     "mobx": "^5.15.4",
     "mobx-react": "^6.2.2",
     "next": "^9.4.2",
     "react": "^16.13.1",
+    "react-clipboard.js": "^2.0.16",
     "react-dom": "^16.13.1",
+    "react-tooltip": "^4.2.6",
     "sass": "^1.26.5",
-    "typescript": "^3.9.3"
+    "typescript": "^3.9.3",
+    "webtorrent": "^0.108.3"
   }
 }
