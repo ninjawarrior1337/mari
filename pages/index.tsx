@@ -11,7 +11,7 @@ export default function Index() {
                     <FileUpload/>
                     <Link href="/seed">
                         <a className="button is-success">
-                            <p className="subtitle">Seed</p>
+                            <p className="subtitle has-text-dark">Seed</p>
                         </a>
                     </Link>
                 </div>

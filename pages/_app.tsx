@@ -29,8 +29,9 @@ export default class MyApp extends App<AppProps, {}, {}> {
             <>
                 <Head>
                     <title>Mari - A Peer to Peer Filesharing Service</title>
+                    <meta name="description" content="A Peer to Peer Filesharing service powered by WebTorrent"></meta>
                     <meta property="og:title" content="Mari" />
-                    <meta property="og:description" content="A Peer to Peer Filesharing Service" />
+                    <meta property="og:description" content="A Peer to Peer Filesharing service" />
                     <meta property="og:type" content="website"/>
                 </Head>
                 <FileStoreContext.Provider value={fileStore}>
