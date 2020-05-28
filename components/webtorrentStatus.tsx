@@ -1,10 +1,8 @@
-import { Instance, Torrent } from "webtorrent";
-import FileCard from "./fileCard";
+import React from "react";
 import Clipboard from "react-clipboard.js";
 import ReactTooltip from "react-tooltip";
-import { useEffect, useState } from "react";
-import { render } from "react-dom";
-import React from "react";
+import { Torrent } from "webtorrent";
+import FileCard from "./fileCard";
 
 export enum TorrentStatus {
     Downloading = "Torrenting Files",

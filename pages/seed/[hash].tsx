@@ -1,9 +1,8 @@
-import {withRouter, SingletonRouter} from "next/router";
+import { GetServerSideProps } from "next";
+import { SingletonRouter, withRouter } from "next/router";
 import React from "react";
 import WebTorrent, { Instance, Torrent } from "webtorrent";
-import Error from "../../components/Error"
-import {GetServerSideProps} from "next"
-import FileCard from "../../components/fileCard";
+import Error from "../../components/Error";
 import WebTorrentStatus, { TorrentStatus } from "../../components/webtorrentStatus";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {

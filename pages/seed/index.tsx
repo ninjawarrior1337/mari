@@ -1,10 +1,9 @@
-import WebTorrent, { Instance, Torrent } from "webtorrent";
-import React, { useContext } from "react";
 import { observer } from "mobx-react";
-import { fileStore } from "../_app";
+import React from "react";
+import WebTorrent, { Instance, Torrent } from "webtorrent";
 import Error from "../../components/Error";
-import FileCard from "../../components/fileCard";
 import WebtorrentStatus, { TorrentStatus } from "../../components/webtorrentStatus";
+import { fileStore } from "../_app";
 
 interface State {
     error: string

@@ -1,6 +1,5 @@
-import { Torrent, TorrentFile } from "webtorrent";
-import { fileStore } from "../pages/_app";
 import { useEffect, useState } from "react";
+import { TorrentFile } from "webtorrent";
 
 interface Props {
     file: TorrentFile
