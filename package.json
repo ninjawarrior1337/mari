@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/ninjawarrior1337/mari#readme",
   "dependencies": {
+    "@babel/core": "^7.12.10",
     "@babel/plugin-proposal-class-properties": "^7.10.4",
     "@babel/plugin-proposal-decorators": "^7.10.5",
     "@fortawesome/fontawesome-free": "^5.14.0",
@@ -30,7 +31,7 @@
     "end-of-stream": "1.4.1",
     "mobx": "^5.15.6",
     "mobx-react": "^6.3.0",
-    "next": "^9.5.3",
+    "next": "^10.0.4",
     "react": "^16.13.1",
     "react-clipboard.js": "^2.0.16",
     "react-dom": "^16.13.1",
