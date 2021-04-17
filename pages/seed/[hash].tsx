@@ -42,9 +42,9 @@ class SeedFromHash extends React.Component<{router?: SingletonRouter, hash: stri
         {
             this.wt.add(hash, {
                 announce: [
+                    "wss://tracker.openwebtorrent.com",
                     "wss://tracker.btorrent.xyz",
                     "wss://tracker.fastcast.nz",
-                    "wss://tracker.openwebtorrent.com",
                 ]
             }, (torr) => {
                 this.setState({torrent: torr, status: TorrentStatus.Downloading})
